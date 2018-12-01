@@ -1,0 +1,27 @@
+source : https://www.toptal.com/javascript/interview-questions
+
+Question :  what will the following code output ?
+(function(){
+  var a = b = 3;
+})();
+console.log("a defined? " + (typeof a !== 'undefined'));
+console.log("b defined? " + (typeof b !== 'undefined'));
+
+Answer  : 
+
+a defined? false
+b defined? true
+
+Why ? in fact this code in IIFE equal to this : 
+b = 3 ;
+var a  = b ;
+so b belongs to global object but a belongs to IFFE scope so it's undefined outside function's scope  
+
+Question : what will the following code output?
+console.log(0.1 + 0.2);
+console.log(0.1 + 0.2 == 0.3);
+
+Answer : 
+0.30000000000000004
+false 
+to get the expected answer you want use Math.abs() function to get the absolute value of summtion 
